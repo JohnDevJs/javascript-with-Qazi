@@ -1,14 +1,32 @@
-//https://superheroapi.com/api/access-token/character-id
-const BASE_URL = "https://superheroapi.com/api.php/${SUPERHERO_TOKEN}"
+const orderSoup = () => console.log('soup is ready')
 
-const getSuperHero = (id, name) => {
-    fetch(`${BASE_URL}/${id}`)
-    .then(response => response.json())
-    .then(json => console.log(json.image))
+console.log('you start the convo with your girlfriend')
+setTimeout(orderSoup, 2000)
+console.log('still speaking')
+
+const promise1 = new Promise((resolve, reject) =>{
+    setTimeout(() => {
+        isReady = [true, false][Math.floor(Math.random() * 2)]
+        isReady ? resolve('soup is ready'):
+       reject('no soup today')
+    }, 2000)
+})
+
+console.log(
+    promise1
+    .then(success => console.log({success}))
+    .catch(error => console.log({error}))
+    )
+
+console.log('fatch:',
+fetch('https://dog.ceo/api/breeds/image/random') // promise 
+ .then(response => response.json()) // promise
+ .then(data => console.log(data))
+)
+
+const getDong = async () => {
+    const url = 'https://dog.ceo/api/breeds/image/random'
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
 }
-  
-  getSuperHero();
-
-  const img = "https://www.superherodb.com/pictures2/portraits/10/100/10476.jpg"
-
-  document.querySelector('body').innerHTML +=`<img src="${img}"`
