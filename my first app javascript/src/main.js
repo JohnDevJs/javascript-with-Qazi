@@ -1,33 +1,33 @@
 let shop = document.getElementById('shop');
 
-let shopItemsData = [{
-    id: "ghjghjfy",
-    name: "Casual Shirt",
-    price: 45,
-    desc: "Lorem ipsum dolor sit amet consectetur adisiciping.",
-    img: "images/img-1.png"
-}, 
-{
-    id: "uirtyui",
-    name: "Offici Shirt",
-    price: 100,
-    desc: "Lorem ipsum dolor sit amet consectetur adisiciping.",
-    img: "images/img-2.png"
-}, 
-{ 
-    id: "nmcvytry",
-    name: "Fit Shirt",
-    price: 25,
-    desc: "Lorem ipsum dolor sit amet consectetur adisiciping.",
-    img: "images/img-3.png"
-},
-{ 
-    id: "iytuiy",
-    name: "Mens Suit",
-    price: 300,
-    desc: "Lorem ipsum dolor sit amet consectetur adisiciping.",
-    img: "images/img-4.png"
-}];
+// let shopItemsData = [{
+//     id: "ghjghjfy",
+//     name: "Casual Shirt",
+//     price: 45,
+//     desc: "Lorem ipsum dolor sit amet consectetur adisiciping.",
+//     img: "images/img-1.png"
+// }, 
+// {
+//     id: "uirtyui",
+//     name: "Offici Shirt",
+//     price: 100,
+//     desc: "Lorem ipsum dolor sit amet consectetur adisiciping.",
+//     img: "images/img-2.png"
+// }, 
+// { 
+//     id: "nmcvytry",
+//     name: "Fit Shirt",
+//     price: 25,
+//     desc: "Lorem ipsum dolor sit amet consectetur adisiciping.",
+//     img: "images/img-3.png"
+// },
+// { 
+//     id: "iytuiy",
+//     name: "Mens Suit",
+//     price: 300,
+//     desc: "Lorem ipsum dolor sit amet consectetur adisiciping.",
+//     img: "images/img-4.png"
+// }];
 
 let basket = JSON.parse(localStorage.getItem("data")) || []
 
@@ -102,3 +102,5 @@ let calculation =()=>{
     let cartIcon = document.getElementById("cartAmount")
     cartIcon.innerHTML = basket.map ((x) => x.item).reduce((x, y) => x + y, 0);
 }
+
+calculation()
